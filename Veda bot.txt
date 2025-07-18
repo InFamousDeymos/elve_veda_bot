@@ -1,0 +1,18 @@
+﻿from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+
+
+
+
+# Команда /start
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "🌙 Привет, смертный... Я Веда. Эльфийка,  бард — и твой новый спутник. Готов к магии?"
+
+
+
+
+# Запуск бота
+app = ApplicationBuilder().token(7625195868:AAH3U07WG8Fkj3BZsBf1Lrc9HGm8PcjY0es).build()
+app.add_handler(CommandHandler("start", start))
+app.run_polling()
